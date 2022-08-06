@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/repositoriesCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/layout_half_padding"
+        app:cardElevation="@dimen/layout_half_padding"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ownerImageView"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/repoNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_half_padding"
+                android:layout_marginTop="@dimen/layout_half_padding"
+                android:layout_marginEnd="@dimen/layout_half_padding"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ownerImageView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="android-repositories" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/repoDescriptionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/layout_half_padding"
+                android:ellipsize="end"
+                android:maxLines="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/repoNameTextView"
+                app:layout_constraintTop_toBottomOf="@id/repoNameTextView"
+                tools:text="description" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipStar"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                app:chipBackgroundColor="@color/white"
+                app:chipIcon="@drawable/ic_star"
+                app:chipIconTint="#FAFA02"
+                app:layout_constraintStart_toStartOf="@id/repoNameTextView"
+                app:layout_constraintTop_toBottomOf="@id/repoDescriptionTextView"
+                tools:text="0" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                app:layout_constraintEnd_toEndOf="@id/repoNameTextView"
+                app:layout_constraintTop_toTopOf="@id/chipStar"
+                tools:text="Kotlin" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
